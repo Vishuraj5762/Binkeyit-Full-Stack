@@ -16,10 +16,29 @@ import addressRouter from "./route/address.route.js"
 import orderRouter from "./route/order.route.js"
 
 const app=express()
+// app.use(cors({
+//     credentials:true,
+//     origin:process.env.FRONTEND_URL
+// }))
+
+const allowedOrigins = [
+  "https://binkeyit-full-stack-plnk.vercel.app", // naya frontend
+  "https://binkeyit-full-stack-ydrn.vercel.app"  // purana frontend (optional)
+];
+
 app.use(cors({
-    credentials:true,
-    origin:process.env.FRONTEND_URL
-}))
+  credentials: true,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+}));
+
+
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(morgan())

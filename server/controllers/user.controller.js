@@ -134,11 +134,18 @@ export async function loginController(req,res) {
     last_login_date:new Date()
    })
    
-   const cookiesOption={
-    httpOnly:true,
-    secure:true,
-    samesite:"none"
-   }
+//    const cookiesOption={
+//     httpOnly:true,
+//     secure:true,
+//     samesite:"none"
+//    }
+
+ const cookieOptions = {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // dev me false
+      sameSite: "None", // correct key & case
+      path: "/"         // sab routes pe kaam kare
+    };
     res.cookie('accessToken',accesstoken,cookiesOption)
     res.cookie('refreshToken',refreshtoken,cookiesOption)
 
