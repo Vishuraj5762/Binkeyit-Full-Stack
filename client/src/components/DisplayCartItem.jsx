@@ -28,7 +28,7 @@ const DisplayCartItem = ({close}) => {
     }
 
   return (
-    <section className='bg-neutral-900 fixed top-0 bottom-0 right-0 left-0 lg:opacity-98 z-50'>
+    <section className='bg-neutral-900 lg:fixed lg:top-0 lg:bottom-0 lg:right-0 lg:left-0  lg:opacity-98 lg:z-50'>
         <div className='bg-white w-full max-w-sm min-h-screen max-h-screen ml-auto'> 
            <div className='flex items-center p-4 shadow-lg gap-3 justify-between'>
             <h2 className='font-semibold'>Cart</h2>
