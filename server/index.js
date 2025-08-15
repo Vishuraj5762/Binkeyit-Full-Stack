@@ -15,15 +15,23 @@ import cartRouter from "./route/cart.route.js"
 import addressRouter from "./route/address.route.js"
 import orderRouter from "./route/order.route.js"
 
+
 const app=express()
 // app.use(cors({
 //     credentials:true,
 //     origin:process.env.FRONTEND_URL
 // }))
 
+
+// const allowedOrigins = [
+//   "https://binkeyit-full-stack-plnk.vercel.app", // naya frontend
+//   "https://binkeyit-full-stack-ydrn.vercel.app"  // purana frontend (optional)
+// ];
+
 const allowedOrigins = [
-  "https://binkeyit-full-stack-plnk.vercel.app", // naya frontend
-  "https://binkeyit-full-stack-ydrn.vercel.app"  // purana frontend (optional)
+  "https://binkeyit-full-stack-plnk.vercel.app",
+  "https://binkeyit-full-stack-ydrn.vercel.app",
+  "https://binkeyit-full-stack-sigma.vercel.app" // add your current frontend
 ];
 
 app.use(cors({
@@ -37,8 +45,6 @@ app.use(cors({
   }
 }));
 
-
-
 app.use(express.json())
 app.use(cookieParser())
 app.use(morgan())
@@ -46,7 +52,8 @@ app.use(helmet({
     crossOriginResourcePolicy:false
 }))
 
-const PORT=8080 || process.env.PORT
+// const PORT=8080 || process.env.PORT
+const PORT = process.env.PORT || 8080;
 
 app.get("/",(req,res)=>{
     //server to client
