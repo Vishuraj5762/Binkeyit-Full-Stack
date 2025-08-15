@@ -1,0 +1,20 @@
+body{
+    /* background-color: rgb(221, 227, 233); */
+    background-color: rgb(242, 242, 242);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.scrollbar-none::-webkit-scrollbar{
+    display: none;
+}
+.scrollbarCustom::-webkit-scrollbar{
+    width: 6px;
+   /* background-color: rgb(186, 186, 219); */
+}
+
+.scrollbarCustom::-webkit-scrollbar-thumb{
+    background-color: rgb(185, 185, 225);
+    border-radius: 50%;
+}
