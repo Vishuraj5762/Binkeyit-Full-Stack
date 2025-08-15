@@ -140,7 +140,7 @@ export async function loginController(req,res) {
 //     samesite:"none"
 //    }
 
- const cookieOptions = {
+ const cookiesOption = {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production", // dev me false
       sameSite: "None", // correct key & case
